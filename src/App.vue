@@ -31,7 +31,7 @@ export default {
   width: 100vw; /* Full width of the viewport */
   height: 100vh; /* Full height of the viewport */
   margin: 0;
-  background: url('') no-repeat center center; /* Background image */
+  background: url('/cool.png') no-repeat center center; /* Background image */
   background-size: cover; /* Make the image cover the entire container */
   overflow: hidden; /* Prevent scrollbars in the app */
 }
