@@ -14,7 +14,7 @@ export default {
   name: 'App',
   data() {
     return {
-      iframeSrc: "https://embeds.beehiiv.com/bee58212-55f9-4f7c-994e-380751e3d646",
+      iframeSrc: "https://3dp5fc-8080.csb.app/",
     };
   },
 };
