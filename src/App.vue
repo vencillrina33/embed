@@ -14,26 +14,42 @@ export default {
   name: 'App',
   data() {
     return {
-      iframeSrc: "https://embeds.beehiiv.com/bee58212-55f9-4f7c-994e-380751e3d646", // Initial source
+      iframeSrc: "https://embeds.beehiiv.com/bee58212-55f9-4f7c-994e-380751e3d646",
     };
   },
 };
 </script>
 
 <style>
-/* Ensure the app container and iframe cover the entire viewport */
-html, body, #app, iframe {
+/* Ensure there is absolutely no margin, padding, or gaps */
+html, body {
   margin: 0;
   padding: 0;
-  width: 100vw; /* Full width */
-  height: 100vh; /* Full height */
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  border: none;
 }
 
-/* Set a background image */
-body {
+#app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: url('/cool.png') no-repeat center center fixed;
   background-size: cover;
+}
+
+/* Ensure the iframe takes up the full viewport */
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
 }
 </style>
