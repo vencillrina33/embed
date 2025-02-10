@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <div class="iframe-container">
-      <iframe
-        :src="iframeSrc"
-        frameborder="0"
-        scrolling="no"
-        seamless>
-      </iframe>
-    </div>
+    <iframe
+      :src="iframeSrc"
+      frameborder="0"
+      scrolling="no"
+      seamless>
+    </iframe>
   </div>
 </template>
 
@@ -23,31 +21,19 @@ export default {
 </script>
 
 <style>
-/* Ensure the app container fills the entire viewport */
-#app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw; /* Full width of the viewport */
-  height: 100vh; /* Full height of the viewport */
+/* Ensure the app container and iframe cover the entire viewport */
+html, body, #app, iframe {
   margin: 0;
-  background: url('/cool.png') no-repeat center center; /* Background image */
-  background-size: cover; /* Make the image cover the entire container */
-  overflow: hidden; /* Prevent scrollbars in the app */
+  padding: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: hidden;
+  border: none;
 }
 
-/* Make the iframe responsive and full-screen */
-.iframe-container {
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: hidden; /* Prevent scrollbars inside the iframe container */
-}
-
-.iframe-container iframe {
-  width: 100%; /* Match container's width */
-  height: 100%; /* Match container's height */
-  border: 0; /* Remove border */
-  background-color: transparent;
-  overflow: hidden; /* Prevent scrollbars */
+/* Set a background image */
+body {
+  background: url('/cool.png') no-repeat center center fixed;
+  background-size: cover;
 }
 </style>
